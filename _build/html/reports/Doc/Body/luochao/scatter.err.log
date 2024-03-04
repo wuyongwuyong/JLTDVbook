@@ -1,0 +1,125 @@
+Traceback (most recent call last):
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/nbclient/client.py", line 1204, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/nbclient/util.py", line 84, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/nbclient/util.py", line 62, in just_run
+    return loop.run_until_complete(coro)
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/asyncio/base_events.py", line 647, in run_until_complete
+    return future.result()
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/nbclient/client.py", line 663, in async_execute
+    await self.async_execute_cell(
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/nbclient/client.py", line 965, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/Jmatlab/y/envs/Jmatlab/lib/python3.9/site-packages/nbclient/client.py", line 862, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+%%file ./LTDV/MATLABcode/Luochao/LTDV_Scatter.m
+%上述表示创建一个.m文件，注意文件名和函数名一致
+
+
+function LTDV_Scatter(y, varargin)
+%% LTDV_Scatter: 2D Scatter plot for matlab 
+%% Input args
+% y -- y data to plot, necessary!!!
+% x -- x data
+% lwidth -- linewidth
+% lcolor -- line color, single color
+% Gradientcolor -- Gradual color change, yes(1) or no(0)
+% c -- Color change basis
+% fz -- fontsize
+% sfilled -- Shape of the scattered dots
+% ssize -- size of dots
+% hold_sign -- new plot(0) or hold on(1)
+% x_name -- xlabel
+% y_name -- ylabel
+% boxoff -- box off(1) or on(0)
+% gridon -- grid on(1) or off(0)
+% legendon -- legend on(1) or off(0)
+%% Call Demo.
+% LTDV_Scatter(1:1:10, 'sfilled', 'pentagram','boxoff', 1, 'hold_sign', 0, 'Gradientcolor', 1);
+%% Hist. info.
+% Created by ChaoLuo @ 2023/6/12
+
+%% input Parser with default values
+p = inputParser;
+addParameter(p, 'x', 1:1:length(y));
+addParameter(p, 'lwidth', 1.5);
+addParameter(p, 'lcolor', [hex2dec('fb'), hex2dec('5b'), hex2dec('a3')]./255); %单一配色
+addParameter(p, 'Gradientcolor', 0);        %选择渐变色
+c = linspace(1,10,length(y));               %以y强度作为颜色轴
+addParameter(p, 'fz', 16);
+addParameter(p, 'sfilled', 'pentagram');    %散点形状可选
+addParameter(p, 'ssize', 40);
+addParameter(p, 'hold_sign', 0);
+addParameter(p, 'x_name', 'Time');
+addParameter(p, 'y_name', 'Intensity (a.u.)');
+addParameter(p, 'boxoff', 0);
+addParameter(p, 'gridon', 0);
+addParameter(p, 'legendon', 0);
+parse(p,varargin{:});       % 对输入变量进行解析，如果检测到前面的变量被赋值，则更新变量取值
+x = p.Results.x;
+if(p.Results.hold_sign)
+    hold on;
+else
+    figure;
+end
+
+if (p.Results.Gradientcolor)
+    scatter(x, y, p.Results.ssize, c, p.Results.sfilled, 'linewidth', p.Results.lwidth);
+else
+    scatter(x, y, p.Results.ssize, p.Results.sfilled, 'linewidth', p.Results.lwidth, 'MarkerEdgecolor', p.Results.lcolor);
+end
+
+xlabel(p.Results.x_name); ylabel(p.Results.y_name);
+xlim([x(1) x(end)]);
+set(gca, 'FontSize', p.Results.fz);
+
+if(p.Results.boxoff)
+    box off;
+end
+if(p.Results.gridon)
+    grid on;
+end
+if(p.Results.legendon)
+    legend on;
+end
+end
+
+
+
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mFileNotFoundError[0m                         Traceback (most recent call last)
+Cell [0;32mIn[1], line 1[0m
+[0;32m----> 1[0m [43mget_ipython[49m[43m([49m[43m)[49m[38;5;241;43m.[39;49m[43mrun_cell_magic[49m[43m([49m[38;5;124;43m'[39;49m[38;5;124;43mfile[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m'[39;49m[38;5;124;43m./LTDV/MATLABcode/Luochao/LTDV_Scatter.m[39;49m[38;5;124;43m'[39;49m[43m,[49m[43m [49m[38;5;124;43m"[39;49m[38;5;124;43m%[39;49m[38;5;124;43m上述表示创建一个.m文件，注意文件名和函数名一致[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mfunction LTDV_Scatter(y, varargin)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m%%[39;49;00m[38;5;124;43m LTDV_Scatter: 2D Scatter plot for matlab [39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m%%[39;49;00m[38;5;124;43m Input args[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m%[39;49m[38;5;124;43m y -- y data to plot, necessary!!![39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% x[39;49;00m[38;5;124;43m -- x data[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m%[39;49m[38;5;124;43m lwidth -- linewidth[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% lc[39;49;00m[38;5;124;43molor -- line color, single color[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% G[39;49;00m[38;5;124;43mradientcolor -- Gradual color change, yes(1) or no(0)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% c[39;49;00m[38;5;124;43m -- Color change basis[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% f[39;49;00m[38;5;124;43mz -- fontsize[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% s[39;49;00m[38;5;124;43mfilled -- Shape of the scattered dots[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% s[39;49;00m[38;5;124;43msize -- size of dots[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% ho[39;49;00m[38;5;124;43mld_sign -- new plot(0) or hold on(1)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% x[39;49;00m[38;5;124;43m_name -- xlabel[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m%[39;49m[38;5;124;43m y_name -- ylabel[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m%[39;49m[38;5;124;43m boxoff -- box off(1) or on(0)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% g[39;49;00m[38;5;124;43mridon -- grid on(1) or off(0)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m% le[39;49;00m[38;5;124;43mgendon -- legend on(1) or off(0)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m%%[39;49;00m[38;5;124;43m Call Demo.[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m%[39;49m[38;5;124;43m LTDV_Scatter(1:1:10, [39;49m[38;5;124;43m'[39;49m[38;5;124;43msfilled[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mpentagram[39;49m[38;5;124;43m'[39;49m[38;5;124;43m,[39;49m[38;5;124;43m'[39;49m[38;5;124;43mboxoff[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 1, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mhold_sign[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 0, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mGradientcolor[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 1);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m%%[39;49;00m[38;5;124;43m Hist. info.[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m%[39;49m[38;5;124;43m Created by ChaoLuo @ 2023/6/12[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;132;43;01m%%[39;49;00m[38;5;124;43m input Parser with default values[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mp = inputParser;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mx[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 1:1:length(y));[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mlwidth[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 1.5);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mlcolor[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, [hex2dec([39;49m[38;5;124;43m'[39;49m[38;5;124;43mfb[39;49m[38;5;124;43m'[39;49m[38;5;124;43m), hex2dec([39;49m[38;5;124;43m'[39;49m[38;5;124;43m5b[39;49m[38;5;124;43m'[39;49m[38;5;124;43m), hex2dec([39;49m[38;5;124;43m'[39;49m[38;5;124;43ma3[39;49m[38;5;124;43m'[39;49m[38;5;124;43m)]./255); [39;49m[38;5;124;43m%[39;49m[38;5;124;43m单一配色[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mGradientcolor[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 0);        [39;49m[38;5;124;43m%[39;49m[38;5;124;43m选择渐变色[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mc = linspace(1,10,length(y));               [39;49m[38;5;124;43m%[39;49m[38;5;124;43m以y强度作为颜色轴[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mfz[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 16);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43msfilled[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mpentagram[39;49m[38;5;124;43m'[39;49m[38;5;124;43m);    [39;49m[38;5;124;43m%[39;49m[38;5;124;43m散点形状可选[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mssize[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 40);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mhold_sign[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 0);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mx_name[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mTime[39;49m[38;5;124;43m'[39;49m[38;5;124;43m);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43my_name[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mIntensity (a.u.)[39;49m[38;5;124;43m'[39;49m[38;5;124;43m);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mboxoff[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 0);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mgridon[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 0);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43maddParameter(p, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mlegendon[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, 0);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mparse(p,varargin[39;49m[38;5;132;43;01m{:}[39;49;00m[38;5;124;43m);       [39;49m[38;5;124;43m%[39;49m[38;5;124;43m 对输入变量进行解析，如果检测到前面的变量被赋值，则更新变量取值[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mx = p.Results.x;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mif(p.Results.hold_sign)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    hold on;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43melse[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    figure;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mend[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mif (p.Results.Gradientcolor)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    scatter(x, y, p.Results.ssize, c, p.Results.sfilled, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mlinewidth[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, p.Results.lwidth);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43melse[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    scatter(x, y, p.Results.ssize, p.Results.sfilled, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mlinewidth[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, p.Results.lwidth, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mMarkerEdgecolor[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, p.Results.lcolor);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mend[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mxlabel(p.Results.x_name); ylabel(p.Results.y_name);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mxlim([x(1) x(end)]);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mset(gca, [39;49m[38;5;124;43m'[39;49m[38;5;124;43mFontSize[39;49m[38;5;124;43m'[39;49m[38;5;124;43m, p.Results.fz);[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mif(p.Results.boxoff)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    box off;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mend[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mif(p.Results.gridon)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    grid on;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mend[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mif(p.Results.legendon)[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m    legend on;[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mend[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;124;43mend[39;49m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;130;43;01m\n[39;49;00m[38;5;124;43m"[39;49m[43m)[49m
+
+File [0;32m~/y/envs/Jmatlab/lib/python3.9/site-packages/IPython/core/interactiveshell.py:2475[0m, in [0;36mInteractiveShell.run_cell_magic[0;34m(self, magic_name, line, cell)[0m
+[1;32m   2473[0m [38;5;28;01mwith[39;00m [38;5;28mself[39m[38;5;241m.[39mbuiltin_trap:
+[1;32m   2474[0m     args [38;5;241m=[39m (magic_arg_s, cell)
+[0;32m-> 2475[0m     result [38;5;241m=[39m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m   2477[0m [38;5;66;03m# The code below prevents the output from being displayed[39;00m
+[1;32m   2478[0m [38;5;66;03m# when using magics with decodator @output_can_be_silenced[39;00m
+[1;32m   2479[0m [38;5;66;03m# when the last Python token in the expression is a ';'.[39;00m
+[1;32m   2480[0m [38;5;28;01mif[39;00m [38;5;28mgetattr[39m(fn, magic[38;5;241m.[39mMAGIC_OUTPUT_CAN_BE_SILENCED, [38;5;28;01mFalse[39;00m):
+
+File [0;32m~/y/envs/Jmatlab/lib/python3.9/site-packages/IPython/core/magic.py:755[0m, in [0;36mMagicAlias.__call__[0;34m(self, *args, **kwargs)[0m
+[1;32m    753[0m         args_list[[38;5;241m0[39m] [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mmagic_params [38;5;241m+[39m [38;5;124m"[39m[38;5;124m [39m[38;5;124m"[39m [38;5;241m+[39m args[[38;5;241m0[39m]
+[1;32m    754[0m         args [38;5;241m=[39m [38;5;28mtuple[39m(args_list)
+[0;32m--> 755[0m     [38;5;28;01mreturn[39;00m [43mfn[49m[43m([49m[38;5;241;43m*[39;49m[43margs[49m[43m,[49m[43m [49m[38;5;241;43m*[39;49m[38;5;241;43m*[39;49m[43mkwargs[49m[43m)[49m
+[1;32m    756[0m [38;5;28;01mfinally[39;00m:
+[1;32m    757[0m     [38;5;28mself[39m[38;5;241m.[39m_in_call [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+
+File [0;32m~/y/envs/Jmatlab/lib/python3.9/site-packages/IPython/core/magics/osm.py:854[0m, in [0;36mOSMagics.writefile[0;34m(self, line, cell)[0m
+[1;32m    851[0m     [38;5;28mprint[39m([38;5;124m"[39m[38;5;124mWriting [39m[38;5;132;01m%s[39;00m[38;5;124m"[39m [38;5;241m%[39m filename)
+[1;32m    853[0m mode [38;5;241m=[39m [38;5;124m'[39m[38;5;124ma[39m[38;5;124m'[39m [38;5;28;01mif[39;00m args[38;5;241m.[39mappend [38;5;28;01melse[39;00m [38;5;124m'[39m[38;5;124mw[39m[38;5;124m'[39m
+[0;32m--> 854[0m [38;5;28;01mwith[39;00m [43mio[49m[38;5;241;43m.[39;49m[43mopen[49m[43m([49m[43mfilename[49m[43m,[49m[43m [49m[43mmode[49m[43m,[49m[43m [49m[43mencoding[49m[38;5;241;43m=[39;49m[38;5;124;43m'[39;49m[38;5;124;43mutf-8[39;49m[38;5;124;43m'[39;49m[43m)[49m [38;5;28;01mas[39;00m f:
+[1;32m    855[0m     f[38;5;241m.[39mwrite(cell)
+
+[0;31mFileNotFoundError[0m: [Errno 2] No such file or directory: './LTDV/MATLABcode/Luochao/LTDV_Scatter.m'
+FileNotFoundError: [Errno 2] No such file or directory: './LTDV/MATLABcode/Luochao/LTDV_Scatter.m'
+

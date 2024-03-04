@@ -1,0 +1,23 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+
+format: jb-book
+root: SimpleStart
+parts:
+  - caption: 使用教程
+    chapters:
+    - file: Doc/GetStarted/matlabinJ
+
+  - caption: 图库
+    chapters:
+    - file: Doc/Body/puguoqing/linegraph
+    - file: Doc/Body/luochao/scatter
+    - file: Doc/Body/fangzhiwei/heatmap
+    - file: Doc/Body/maxinyi/loglog
+    - file: Doc/Body/zhangxuguang/histogram
+    - file: Doc/Body/puguoqing/3dsurfaceplot
+
+  - caption: 常见问题
+    chapters:
+    - file: Doc/FAQ/Questions

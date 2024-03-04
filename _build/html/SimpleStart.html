@@ -1,0 +1,826 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>快速开始 &#8212; LASER TEAM DATA VIEWER</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'SimpleStart';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="本地安装" href="Doc/GetStarted/matlabinJ.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    快速开始
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">使用教程</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Doc/GetStarted/matlabinJ.html">本地安装</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">图库</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Doc/Body/puguoqing/linegraph.html">线图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Doc/Body/luochao/scatter.html">散点图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Doc/Body/fangzhiwei/heatmap.html">热力图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Doc/Body/maxinyi/loglog.html">对数图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Doc/Body/zhangxuguang/histogram.html">直方图</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Doc/Body/puguoqing/3dsurfaceplot.html">3D曲面图</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">常见问题</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Doc/FAQ/Questions.html">FAQs</a></li>
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/wuyongwuyong/LTDVbook" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="源码库"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="下载此页面">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/SimpleStart.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="下载源文件"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="列印成 PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="全屏模式"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>快速开始</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> 目录 </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code"><strong>VS code下载</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip"><strong>IP配置</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>插件安装</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-ssh"><strong>Remote-SSH</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python"><strong>PYTHON</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter"><strong>Jupyter</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#live-server"><strong>Live Server</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>VS CODE设置</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book"><strong>JUPYTER BOOK编译</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>项目结构</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>编译步骤</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab"><strong>MATLAB代码框</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>MATLAB基本代码框</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellmatlab"><strong>Cell</strong>里面书写<strong>MATLAB</strong>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">高级的代码框</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown"><strong>Markdown语法速入门</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>基本入门语法</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-ref-label1"><strong>稍微高级一点</strong></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1><strong>快速开始</strong><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h1>
+<p>本地不再安装的使用方法，只需要下载好VScode能登陆服务器即可。</p>
+<section id="vs-code">
+<h2><strong>VS code下载</strong><a class="headerlink" href="#vs-code" title="Permalink to this headline">#</a></h2>
+<p>下载好VS code之后进行相关基本配置，可以参考<a class="reference external" href="https://blog.csdn.net/zhaxun/article/details/120568402">该网址</a>进行配置。</p>
+<div class="tip admonition">
+<p class="admonition-title">提示</p>
+<p>注意安装好SSH远程插件，以及确保是上海交通大学的校园网，如在校外请使用<a class="reference external" href="https://net.sjtu.edu.cn/wlfw/VPN.htm">交大VPN</a>。</p>
+</div>
+<section id="ip">
+<h3><strong>IP配置</strong><a class="headerlink" href="#ip" title="Permalink to this headline">#</a></h3>
+<p><strong>VS code</strong>上连接服务器的<strong>IP</strong>配置如下：</p>
+<div class="highlight-cfg notranslate"><div class="highlight"><pre><span></span><span class="na">Host Jmatlab</span>
+<span class="w">    </span><span class="na">HostName 202.120.39.189</span>
+<span class="w">    </span><span class="na">User Jmatlab</span>
+<span class="w">    </span><span class="na">Port 60003</span>
+</pre></div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">提示</p>
+<p>直接在原有的<code class="docutils literal notranslate"><span class="pre">SSH</span> <span class="pre">config</span></code>文件下面增加上面的语句后刷新即可，原来的一些远程连接都能在列表观察到。Host自己想改啥改啥。</p>
+</div>
+</section>
+<section id="id2">
+<h3><strong>插件安装</strong><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h3>
+<p>在<strong>VS code</strong>中安装插件的步骤可以参考<a class="reference external" href="https://zhuanlan.zhihu.com/p/142083916">该帖子</a>。</p>
+<div class="warning admonition">
+<p class="admonition-title">注意</p>
+<p>注意插件要安装到SSH服务器上，不仅仅是本地的安装（SSH连接服务器后再在market里面找）。</p>
+</div>
+<p>比较好用的插件包括：</p>
+<section id="remote-ssh">
+<h4><strong>Remote-SSH</strong><a class="headerlink" href="#remote-ssh" title="Permalink to this headline">#</a></h4>
+<p>用于与服务器进行远程连接，便于查看服务器上文件等。</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="https://pic2.zhimg.com/80/v2-eff13d576cf681b0915aa4fcf919dd75_1440w.webp"><img alt="LiveServer" class="bg-primary mb-1 align-center" src="https://pic2.zhimg.com/80/v2-eff13d576cf681b0915aa4fcf919dd75_1440w.webp" style="width: 600px;" /></a>
+</section>
+<section id="python">
+<h4><strong>PYTHON</strong><a class="headerlink" href="#python" title="Permalink to this headline">#</a></h4>
+<p>用于在本地选用服务器的<code class="docutils literal notranslate"><span class="pre">python</span></code>环境。</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/pyhon.png"><img alt="pyhon" class="bg-primary mb-1 align-center" src="_images/pyhon.png" style="width: 600px;" /></a>
+</section>
+<section id="jupyter">
+<h4><strong>Jupyter</strong><a class="headerlink" href="#jupyter" title="Permalink to this headline">#</a></h4>
+<p>用于在服务器上运行部署好的<strong>MATLAB kernel</strong>。</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/jupyter.png"><img alt="jupyter" class="bg-primary mb-1 align-center" src="_images/jupyter.png" style="width: 600px;" /></a>
+<p>安装好之后打开<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>文件就可以按下图选择不同Kernel，此处我们选择<strong>MATLAB</strong>内核。</p>
+<a class="reference internal image-reference" href="_images/jupyter-kernel.gif"><img alt="jupyterkernel" class="align-center" src="_images/jupyter-kernel.gif" style="width: 800px;" /></a>
+<div class="admonition- admonition">
+<p class="admonition-title"><strong>版本问题要注意</strong></p>
+<p>注意服务器上的<code class="docutils literal notranslate"><span class="pre">Jupyter</span></code>和<code class="docutils literal notranslate"><span class="pre">Python</span></code>插件版本要与本地的版本一致，否则可能不能选择内核。
+<strong>可能存在另外同学更新了插件版本，本地需要跟着更新的情况；尽量避免更新远程的插件</strong></p>
+</div>
+</section>
+<section id="live-server">
+<span id="content-liveserver-ref"></span><h4><strong>Live Server</strong><a class="headerlink" href="#live-server" title="Permalink to this headline">#</a></h4>
+<p>用于预览服务器上的网页，比如<code class="docutils literal notranslate"><span class="pre">.html</span></code>文件。</p>
+<a class="bg-primary mb-1 reference internal image-reference" href="_images/LiveServer.png"><img alt="LiveServer" class="bg-primary mb-1 align-center" src="_images/LiveServer.png" style="width: 600px;" /></a>
+<p>安装完重新打开VS code，使用时候对着<code class="docutils literal notranslate"><span class="pre">.html</span></code>文件右键选择Open with Live Server即可。初次打开会稍微耗时，等个几分钟即可。</p>
+</section>
+</section>
+<section id="id3">
+<h3><strong>VS CODE设置</strong><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<div class="error admonition">
+<p class="admonition-title">重要、重要、重要</p>
+<p>注意使用过程需要<strong>关闭VS CODE的插件自动更新</strong>，防止别人登陆JMatlab插件需要手动更新！！！！
+<span class="math notranslate nohighlight">\(\text{File} \rightarrow \text{Preferences} \rightarrow\text{Settings} \rightarrow \text{Extensions} \rightarrow \text{Input autoUpdate}\)</span></p>
+<p><img alt="操作流程" src="_images/autoupdateoff1.gif" /></p>
+</div>
+</section>
+</section>
+<section id="jupyter-book">
+<h2><strong>JUPYTER BOOK编译</strong><a class="headerlink" href="#jupyter-book" title="Permalink to this headline">#</a></h2>
+<p>由于markdown有不同的语法比如<code class="docutils literal notranslate"><span class="pre">MyST</span></code>、<code class="docutils literal notranslate"><span class="pre">MyST-nb</span></code>等，在<strong>VS code</strong>中直接看ipynb文件有些结构无法预览，比如<a class="reference internal" href="#content-ref-label1"><span class="std std-ref">下面章节的框架</span></a>。因此最好的预览方式是更改完<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>文件后，编译成<code class="docutils literal notranslate"><span class="pre">.html</span></code>文件进行预览。</p>
+<section id="id4">
+<h3><strong>项目结构</strong><a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>一些配置都已经配置好，需要做的是找到<strong>LTDVbook</strong>的路径，然后在<strong>VS code</strong>中打开该路径下的<strong>ipynb</strong>文件，然后按照下面的步骤进行编译。</p>
+<div class="note admonition">
+<p class="admonition-title">备注</p>
+<p>整个Laser Team Data Viewer的<strong>Jupyter book</strong>项目路径为<code class="docutils literal notranslate"><span class="pre">/home/Jmatlab/workspace/LTDV/LTDVbook/LTDVbook</span></code>。</p>
+</div>
+<p>项目中包括</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
+Doc</label><div class="sd-tab-content docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-g-3 sd-g-xs-3 sd-g-sm-3 sd-g-md-3 sd-g-lg-3 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Body</div>
+<p class="sd-card-text">存放正文内容的<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>或<code class="docutils literal notranslate"><span class="pre">.md</span></code>文档，注意要在<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>中添加对应的路径才能在结果看到。</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Fig</div>
+<p class="sd-card-text">存放使用到的图片，注意要在<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>或<code class="docutils literal notranslate"><span class="pre">.md</span></code>文档中使用相对路径。</p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+GetStart</div>
+<p class="sd-card-text">教程快速开始界面的<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>文件，可以用于一些结构参考。</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
+LTDV</label><div class="sd-tab-content docutils">
+<p>里面放每个人的<code class="docutils literal notranslate"><span class="pre">MATLAB</span></code>代码，注意按自己名字创建个文件夹，主要用于<a class="reference internal" href="#content-ref-func"><span class="std std-ref">创建函数</span></a>。</p>
+</div>
+<input id="sd-tab-item-2" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
+_config.yml</label><div class="sd-tab-content docutils">
+<p>编译中的配置文件，目前已经调整好<strong>不需要更改</strong>。</p>
+</div>
+<input id="sd-tab-item-3" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
+_toc.yml</label><div class="sd-tab-content docutils">
+<p>目录结构文件，如果要新加章节等需要在里面<strong>添加对应<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>或者<code class="docutils literal notranslate"><span class="pre">.md</span></code>文档的路径</strong>。</p>
+</div>
+<input id="sd-tab-item-4" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
+_build</label><div class="sd-tab-content docutils">
+<p>里面是编译完成后生成的文件，在其中的<code class="docutils literal notranslate"><span class="pre">html/index.html</span></code>预览生成效果（使用<a class="reference internal" href="#content-liveserver-ref"><span class="std std-ref">Live Server</span></a>插件打开）。</p>
+</div>
+</div>
+</section>
+<section id="id5">
+<h3><strong>编译步骤</strong><a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>添加好<code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code>文件后，使用<a class="reference internal" href="#content-liveserver-ref"><span class="std std-ref">Live Server</span></a>打开<code class="docutils literal notranslate"><span class="pre">~/_build/html/index.html</span></code>文件，直接运行下列语句即可新编译，刷新<code class="docutils literal notranslate"><span class="pre">.html</span></code>就能直接看到更改。</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter-book<span class="w"> </span>build<span class="w"> </span>/home/Jmatlab/workspace/LTDV/LTDVbook/LTDVbook/<span class="w"> </span>--all
+</pre></div>
+</div>
+<p>下面是运行的示例，只需要复制代码按回车即可。</p>
+<a class="reference internal image-reference" href="_images/build-sample.gif"><img alt="buildsample" class="align-center" src="_images/build-sample.gif" style="width: 600px;" /></a>
+<div class="tip admonition">
+<p class="admonition-title">提示</p>
+<p>登陆<code class="docutils literal notranslate"><span class="pre">Jmatlab</span></code>账号后，在<code class="docutils literal notranslate"><span class="pre">/home/Jmatlab/HINT/JLTDV.txt</span></code>中可以直接复制指令。</p>
+</div>
+</section>
+</section>
+<section id="matlab">
+<h2><strong>MATLAB代码框</strong><a class="headerlink" href="#matlab" title="Permalink to this headline">#</a></h2>
+<section id="id6">
+<h3><strong>MATLAB基本代码框</strong><a class="headerlink" href="#id6" title="Permalink to this headline">#</a></h3>
+<p>在<strong>VS code</strong>中添加代码框，注意选择Kernel为<strong>MATLAB</strong>核，在代码框中写入<strong>MATLAB</strong>代码即可，如下所示。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%plot -s 400,300   </span>
+<span class="c">%上述表示限制输出的图像大小尺寸</span>
+
+<span class="nb">clear</span><span class="p">,</span><span class="nb">clc</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1000</span><span class="p">);</span><span class="w"> </span>
+<span class="n">y1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="o">*</span><span class="nb">cos</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">);</span>
+<span class="n">y3</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">3</span><span class="o">*</span><span class="nb">sin</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="n">f1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">);</span>
+
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/8b1b19505dd41cc9276bbaa7f2db58ffb1558798202febf5c172d2a5e104fac6.png" src="_images/8b1b19505dd41cc9276bbaa7f2db58ffb1558798202febf5c172d2a5e104fac6.png" />
+</div>
+</div>
+</section>
+<section id="cellmatlab">
+<span id="content-ref-func"></span><h3><strong>Cell</strong>里面书写<strong>MATLAB</strong>函数<a class="headerlink" href="#cellmatlab" title="Permalink to this headline">#</a></h3>
+<p>此外，一些notebook中的MATLAB操作可以参考<a class="reference external" href="https://am111.readthedocs.io/en/latest/jmatlab_use.html#Plotting">该文档</a>。下列示例表示如何在Cell中使用自定义的Function函数。</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%%file ./LTDV/MATLABcode/Wuyong/multi_line_func.m</span>
+<span class="c">%上述表示创建一个.m文件，注意文件名和函数名一致</span>
+
+<span class="k">function</span><span class="w"> </span>p<span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nf">multi_line_func</span><span class="p">(</span>a,b<span class="p">)</span>
+<span class="w">    </span><span class="c">% in-file comments can be added like this</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">;</span>
+<span class="k">end</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Created file &#39;/home/Jmatlab/workspace/LTDV/MATLABcode/Wuyong/multi_line_func.m&#39;.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="n">multi_line_func</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ans =
+
+     4
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id7">
+<h3>高级的代码框<a class="headerlink" href="#id7" title="Permalink to this headline">#</a></h3>
+<p>以在VS code中右键code cell选择notebook cell里面的add cell tag选项，给代码框添加标签，常用的一些标签可以参考<a class="reference external" href="https://jupyterbook.org/en/stable/reference/cheatsheet.html#myst-cheatsheet-code-cell-tags">该页面</a>。</p>
+<div class="tip admonition">
+<p class="admonition-title">提示</p>
+<p>注意下拉到Tags项才能看到。
+之前运行过的变量可以直接调用。</p>
+</div>
+<p>下示例展示添加了hide-output的Tags之后的代码框效果</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input above-output-prompt docutils container">
+<div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><span class="c">%plot -s 400,300  </span>
+
+<span class="n">f1</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"> </span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y1</span><span class="p">);</span>
+<span class="n">hold</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y2</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y3</span><span class="p">);</span>
+
+<span class="n">grid</span><span class="w"> </span><span class="s">on</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
+<div class="cell_output docutils container">
+<img alt="_images/4b61905bff4ee9db82d81d3ef9db7ffd246da99521d2c3d44c4f8dd94af3c1f9.png" src="_images/4b61905bff4ee9db82d81d3ef9db7ffd246da99521d2c3d44c4f8dd94af3c1f9.png" />
+</div>
+</details>
+</div>
+</section>
+</section>
+<section id="markdown">
+<h2><strong>Markdown语法速入门</strong><a class="headerlink" href="#markdown" title="Permalink to this headline">#</a></h2>
+<section id="id8">
+<h3><strong>基本入门语法</strong><a class="headerlink" href="#id8" title="Permalink to this headline">#</a></h3>
+<div class="margin admonition">
+<p class="admonition-title">小贴士</p>
+<p>Typora的<a class="reference external" href="https://www.cnblogs.com/guoxuanhan/p/16841068.html">免激活版</a>。</p>
+</div>
+<p>Markdown基本的语法可以参考<a class="reference external" href="https://markdown.com.cn/basic-syntax/">该网站</a>。推荐<a class="reference external" href="https://typoraio.cn/">Typora</a>编辑器编写Markdown。</p>
+<p>有些<a class="reference external" href="https://blog.csdn.net/Yuki_fx/article/details/104122544">快捷键</a>比较好用。</p>
+</section>
+<section id="content-ref-label1">
+<span id="id9"></span><h3><strong>稍微高级一点</strong><a class="headerlink" href="#content-ref-label1" title="Permalink to this headline">#</a></h3>
+<p>特殊的边框框架可以参考<a class="reference external" href="https://studynotes.readthedocs.io/zh/main/struct/MyST/syntax-guide.html">MyST语法</a>。可以看到如下的不同边框效果。</p>
+<div class="tip admonition">
+<p class="admonition-title">提示</p>
+<p>该效果需要通过<a class="reference external" href="https://jupyterbook.org/en/stable/start/build.html">Jupyter-book编译</a>产生HTML才能预览，直接MarkDown看不到。</p>
+</div>
+<div class="note admonition">
+<p class="admonition-title">备注</p>
+<p>该效果需要通过<a class="reference external" href="https://jupyterbook.org/en/stable/start/build.html">Jupyter-book编译</a>产生HTML才能预览，直接MarkDown看不到。</p>
+</div>
+<div class="warning admonition">
+<p class="admonition-title">警告</p>
+<p>这是一个警告框框示例。</p>
+</div>
+<div class="error admonition">
+<p class="admonition-title">错误</p>
+<p>这是一个错误框框示例。</p>
+</div>
+<p>更加高级的边框可以参考<a class="reference external" href="https://studynotes.readthedocs.io/zh/main/struct/extend/togglebutton.html">Shinx与MyST的网站</a>。可以实现如下所示的下拉高亮框效果。</p>
+<div class="dropdown toggle-shown admonition">
+<p class="admonition-title">Click the button to reveal!</p>
+<p>Some hidden toggle content!</p>
+</div>
+<div class="warning dropdown toggle-shown admonition">
+<p class="admonition-title">What could be inside this warning?</p>
+<p>A whale of a joke!</p>
+<p><img alt="A whale of a joke" src="https://media.giphy.com/media/FaKV1cVKlVRxC/giphy.gif" /></p>
+<p>(sorry)</p>
+</div>
+</section>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "matlab_connect"
+        },
+        kernelOptions: {
+            name: "matlab_connect",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'matlab_connect'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="right-next"
+       href="Doc/GetStarted/matlabinJ.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">本地安装</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> 目录
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vs-code"><strong>VS code下载</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ip"><strong>IP配置</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2"><strong>插件安装</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#remote-ssh"><strong>Remote-SSH</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#python"><strong>PYTHON</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter"><strong>Jupyter</strong></a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#live-server"><strong>Live Server</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3"><strong>VS CODE设置</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-book"><strong>JUPYTER BOOK编译</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4"><strong>项目结构</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id5"><strong>编译步骤</strong></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matlab"><strong>MATLAB代码框</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id6"><strong>MATLAB基本代码框</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cellmatlab"><strong>Cell</strong>里面书写<strong>MATLAB</strong>函数</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">高级的代码框</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#markdown"><strong>Markdown语法速入门</strong></a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id8"><strong>基本入门语法</strong></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#content-ref-label1"><strong>稍微高级一点</strong></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+作者： Laser Team
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+<div class="extra_footer">
+  <a href="https://olife.sjtu.edu.cn">智能光纤系统实验室</a>
+</div>
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
